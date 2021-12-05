@@ -480,6 +480,10 @@ stop() {
     # restore resolv.conf
     restore_resolv_conf
 
+    # restart the NetworkManager
+    systemctl restart NetworkManager
+    msg "Network Manager restarted"
+
     rm -f $BACKUPDIR/started
 }
 
